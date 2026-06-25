@@ -1,0 +1,125 @@
+	
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario GET y POST</title>
+    <script>
+        function handleGetForm(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto
+            const form = event.target;
+            const url = new URL(window.location.href);
+            url.search = new URLSearchParams(new FormData(form)).toString();
+ 
+            document.getElementById('response').innerHTML = `<strong>Respuesta GET:</strong> ${url.searchParams.get('name')}`;
+            history.pushState(null, '', url); // Actualizar la URL sin recargar la página
+        }
+ 
+        function handlePostForm(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto
+            const form = event.target;
+            const formData = new FormData(form);
+ 
+            document.getElementById('response').innerHTML = `<strong>Respuesta POST:</strong> ${formData.get('name')}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario con GET y POST</h1>
+ 
+    <div id="response" style="margin-bottom: 20px;">
+        <strong>La respuesta aparecerá aquí.</strong>
+    </div>
+ 
+    <!-- Formulario para método GET -->
+    <form onsubmit="handleGetForm(event)">
+        <label for="getName">Nombre (GET):</label>
+        <input type="text" id="getName" name="name" required>
+        <button type="submit">Enviar por GET</button>
+    </form>
+ 
+    <br>
+ 
+    <!-- Formulario para método POST -->
+    <form onsubmit="handlePostForm(event)">
+        <label for="postName">Nombre (POST):</label>
+        <input type="text" id="postName" name="name" required>
+        <button type="submit">Enviar por POST</button>
+    </form>
+</body>
+</html>
+Comercio HyAE
+
+Arquitectura de aplicaciones web
+
+Transferencia de información en aplicaciones web
+
+Proceso de transferencia de información en arquitecturas de aplicaciones web.
+
+Procesamiento en el servidor
+
+El servidor recibe la solicitud y el proceso.
+
+Acceso a la base de datos
+
+El servidor utiliza SQL, interactúa con la BD y obtiene los datos solicitados.
+
+Lógica de la aplicación
+
+El servidor ejecuta la lógica de la aplicación para procesar los datos y generar una respuesta.
+
+Formato de la respuesta
+
+El servidor formatea la respuesta en un formato adecuado, como JSON o XML.
+
+Comercio HyAE
+
+Arquitectura de aplicaciones web
+
+Transferencia de información en aplicaciones web
+
+Proceso de transferencia de información en arquitecturas de aplicaciones web.
+
+Procesamiento en el servidor
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario GET y POST</title>
+</head>
+<body>
+    <h1>Formulario con GET y POST</h1>
+ 
+    <div id="response" style="margin-bottom: 20px;">
+        <strong>La respuesta aparecerá aquí.</strong>
+    </div>
+ 
+    <!-- Formulario para método GET -->
+    <form action="process.php" method="GET">
+        <label for="getName">Nombre (GET):</label>
+        <input type="text" id="getName" name="name" required>
+        <button type="submit">Enviar por GET</button>
+    </form>
+ 
+    <br>
+ 
+    <!-- Formulario para método POST -->
+    <form action="process.php" method="POST">
+        <label for="postName">Nombre (POST):</label>
+        <input type="text" id="postName" name="name" required>
+        <button type="submit">Enviar por POST</button>
+    </form>
+</body>
+</html>
+{Unidad II}
+Frameworks de desarrollo web y comercio electrónico
+
+Frameworks de desarrollo web y comercio electrónico
+
+¿Estructura?
+
+Es una estructura de software predefinida que proporciona herramientas, bibliotecas y mejores prácticas para el desarrollo de aplicaciones.
+Funciona como un marco de trabajo que facilita la programación al ofrecer código reutilizable, modular y organizado, permitiendo a los desarrolladores centrados en la lógica del negocio en lugar de escribir código desde cero.
